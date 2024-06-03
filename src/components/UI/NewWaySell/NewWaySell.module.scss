@@ -1,0 +1,87 @@
+@use "styles/mixins.scss";
+@import "styles/unit.scss";
+
+.root {
+  .container {
+    .row {
+      border-radius: rem(50);
+      height: rem(547);
+      width: 100%;
+      background: var(--gradient-color);
+      display: flex;
+      column-gap: rem(20);
+      .colFirst {
+        padding: rem(95) 0 rem(80) rem(70);
+        width: rem(640);
+        h1 {
+          @include mixins.title;
+        }
+        p {
+          @include mixins.content;
+          margin-top: rem(30);
+        }
+        .buttons {
+          margin-top: rem(50);
+          display: flex;
+          column-gap: rem(20);
+          button {
+            width: rem(274);
+            height: rem(68);
+            padding: rem(18) 0;
+            @include mixins.content;
+          }
+        }
+      }
+      .colSecond {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .img {
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+          border-radius: rem(26);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    .container {
+      padding: 0;
+      min-height: rem(950);
+      .row {
+        border-radius: rem(0);
+        height: rem(730);
+        flex-direction: column;
+        column-gap: rem(20);
+        border-radius: 0 0 rem(30) rem(30);
+
+        .colFirst {
+          padding: rem(50) rem(20) rem(44);
+          width: 100%;
+          h1 {
+            @include mixins.titleMobile;
+          }
+          p {
+            @include mixins.contentMobile;
+            margin-top: rem(20);
+          }
+          .buttons {
+            flex-direction: column;
+            gap: rem(20);
+            margin-top: rem(20);
+            button {
+              width: rem(172);
+              height: rem(44);
+              padding: rem(10) 0;
+              border-radius: rem(14);
+              @include mixins.contentMobile;
+            }
+          }
+        }
+      }
+    }
+  }
+}

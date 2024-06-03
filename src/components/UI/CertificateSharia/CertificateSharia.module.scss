@@ -1,0 +1,72 @@
+@use "styles/mixins.scss";
+@import "styles/unit.scss";
+
+.root {
+  margin-top: rem(200);
+  .container {
+    .content {
+      max-width: rem(735);
+      h2 {
+        font-weight: 700;
+        line-height: rem(60);
+        font-size: rem(56);
+      }
+      p {
+        margin-top: rem(30);
+        @include mixins.content;
+      }
+    }
+
+    .row {
+      margin-top: rem(130);
+      position: relative;
+      .styleNext {
+        left: rem(60rem);
+        top: rem(-60);
+      }
+      .stylePrev {
+        top: rem(-60);
+        left: rem(-15);
+      }
+      .col {
+        display: flex;
+        justify-content: center;
+        .card {
+          margin: 0 rem(15);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          max-width: rem(860);
+          max-height: rem(608);
+          img {
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    margin-top: rem(60);
+
+    .container {
+      .content {
+        width: 90%;
+        h2 {
+          @include mixins.titleMobile;
+        }
+        p {
+          @include mixins.contentMobile;
+          margin-top: rem(36);
+        }
+      }
+      .row {
+        margin-top: rem(40);
+      }
+    }
+  }
+}

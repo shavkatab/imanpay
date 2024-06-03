@@ -1,0 +1,211 @@
+@use "styles/mixins.scss";
+@import "styles/unit.scss";
+
+.root {
+  margin-top: rem(150);
+  .container {
+    padding-bottom: rem(100);
+    .row {
+      display: grid;
+      grid-template-columns: rem(320) auto;
+      column-gap: rem(50);
+      .left {
+        background: #f6f6fa;
+        padding: rem(30);
+        border-radius: rem(26);
+        .name {
+          font-weight: 600;
+          font-size: rem(24);
+          line-height: rem(24);
+          margin-top: rem(50);
+          &:first-child {
+            margin: 0;
+          }
+        }
+        .titles {
+          margin-top: rem(30);
+          display: grid;
+          gap: rem(30);
+          .check {
+            display: flex;
+            align-items: center;
+            column-gap: rem(10);
+            .checkBox {
+              cursor: pointer;
+              width: rem(32);
+              height: rem(32);
+              background: #d9d9d9;
+              border-radius: rem(6);
+            }
+            .activeCheck {
+              background-color: #01cab0;
+            }
+          }
+          .title {
+            @include mixins.text;
+            cursor: pointer;
+            color: var(--secondary-color);
+          }
+          .activeTitle {
+            transition: 0.03s ease-in;
+            color: var(--primary-color);
+          }
+        }
+      }
+      //
+      .right {
+        .rightTitle {
+          display: flex;
+          justify-content: flex-end;
+          .mapTitle {
+            display: flex;
+            align-items: center;
+            column-gap: rem(10);
+            cursor: pointer;
+            p {
+              color: var(--primary-color);
+              @include mixins.text;
+            }
+          }
+        }
+        .body {
+          margin-top: rem(50);
+          display: grid;
+          grid-template-columns: repeat(3, rem(246));
+          grid-template-rows: rem(270) rem(270) rem(270);
+          column-gap: rem(30);
+          row-gap: rem(50);
+          .card {
+            width: 100%;
+            height: rem(270);
+            &_body {
+              cursor: pointer;
+              border-radius: rem(26);
+              background: #f1f1f5;
+              height: rem(176);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: rem(120);
+                height: rem(120);
+                object-fit: contain;
+              }
+              h3 {
+                color: var(--primary-color);
+                text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
+              }
+            }
+            &_content {
+              margin-top: rem(30);
+              p {
+                @include mixins.text;
+                font-size: rem(20);
+                &:last-child {
+                  font-weight: 400;
+                  color: var(--secondary-color);
+                  font-size: rem(17);
+                  margin-top: rem(10);
+                }
+              }
+            }
+          }
+          .notAvailable {
+            h3 {
+              color: var(--secondary-color);
+              font-size: rem(28);
+              white-space: nowrap;
+              font-weight: 600;
+            }
+          }
+        }
+        .pagination {
+          margin-top: rem(100);
+        }
+      }
+    }
+  }
+  .greenRow {
+    background: var(--primary-color);
+    width: 100%;
+    padding: rem(20) 0;
+    height: rem(62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.dialog {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 200px);
+  .close {
+    position: absolute;
+    right: rem(30);
+    top: rem(30);
+    width: rem(30);
+    height: rem(30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: rem(8);
+    background: #ffffff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+    z-index: 999;
+  }
+  .map {
+    position: "relative";
+    display: grid;
+    grid-template-columns: rem(380) rem(820);
+    height: 100%;
+    .left {
+      overflow-y: scroll;
+      margin-right: rem(20);
+      margin-top: rem(50);
+      padding: 0 rem(30) rem(20) rem(50);
+      &::-webkit-scrollbar {
+        width: rem(8);
+        height: rem(50);
+      }
+      &::-webkit-scrollbar-track {
+        background: gainsboro;
+        border-radius: 5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #01cab0;
+        border-radius: rem(5);
+      }
+      .merchant {
+        padding: rem(15) 0;
+        cursor: pointer;
+        border-bottom: 1px solid var(--primary-color);
+        &:first-child {
+          padding-top: 0;
+        }
+        &:last-child {
+          border: 0;
+        }
+        p {
+          @include mixins.text;
+          color: var(--secondary-color);
+        }
+        .activeTitle {
+          color: black;
+        }
+        span {
+          display: flex;
+          align-items: center;
+          gap: rem(8);
+          margin-top: rem(8);
+          a {
+            color: var(--primary-color);
+            font-size: rem(15);
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}

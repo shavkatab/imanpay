@@ -1,0 +1,136 @@
+@use "styles/mixins.scss";
+@import "styles/unit.scss";
+
+.root {
+  .container {
+    .desktop {
+      border-radius: rem(50);
+      height: rem(573);
+      width: 100%;
+      background: var(--gradient-color);
+      display: flex;
+      column-gap: rem(20);
+      .colFirst {
+        padding: rem(95) 0 rem(80) rem(70);
+        min-width: rem(640);
+        h1 {
+          @include mixins.title;
+        }
+        p {
+          @include mixins.content;
+          margin-top: rem(30);
+        }
+        .input {
+          margin-top: rem(120);
+          input {
+            background: #fff;
+            width: rem(568);
+            height: rem(68);
+            border-radius: rem(16);
+            padding-top: rem(15);
+            &::placeholder {
+              font-size: rem(22);
+              line-height: rem(32);
+              color: var(--primary-color);
+            }
+          }
+        }
+      }
+      .colSecond {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        .images {
+          img {
+            position: absolute;
+          }
+          .firtsImg {
+            top: rem(64);
+            right: rem(52);
+          }
+          .secondImg {
+            top: rem(64);
+            right: rem(10);
+          }
+          .thirdImg {
+            bottom: rem(105);
+            right: rem(225);
+          }
+        }
+      }
+    }
+    .mobile {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    .container {
+      padding: 0;
+      .desktop {
+        display: none;
+      }
+      .mobile {
+        display: block;
+        background: var(--gradient-color);
+        min-height: rem(637);
+        padding: rem(50) rem(20);
+        border-radius: 0 0 rem(30) rem(30);
+
+        h3 {
+          @include mixins.titleMobile;
+        }
+        p {
+          padding-top: rem(20);
+          @include mixins.textMobile;
+        }
+        .body {
+          display: flex;
+          justify-content: center;
+        }
+        .images {
+          position: relative;
+          width: rem(300);
+          height: rem(300);
+          img {
+            position: absolute;
+          }
+          .first {
+            width: rem(78);
+            top: rem(64);
+            right: rem(52);
+          }
+          .second {
+            top: rem(64);
+            right: rem(10);
+            width: rem(260);
+          }
+          .third {
+            width: rem(119);
+            left: rem(60);
+            bottom: rem(-50);
+          }
+        }
+        .input {
+          margin-top: rem(100);
+          input {
+            background: #fff;
+            width: 100%;
+            height: rem(62);
+            border-radius: rem(16);
+            padding: rem(12);
+            padding-left: rem(50);
+            &::placeholder {
+              font-size: rem(15);
+              line-height: rem(26);
+              color: var(--primary-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}

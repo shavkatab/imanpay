@@ -1,0 +1,225 @@
+@use "styles/mixins.scss";
+@import "styles/unit.scss";
+
+.root {
+  padding: rem(50) 0 rem(80);
+  .container {
+    .title {
+      display: flex;
+      justify-content: center;
+      h2 {
+        text-align: center;
+        @include mixins.title;
+      }
+    }
+    .banner {
+      margin-top: rem(56);
+      &_imgs {
+        height: rem(344);
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        .first_img {
+          z-index: 1;
+        }
+        .second_img {
+          transform: translateX(rem(-5));
+          z-index: 0;
+          margin-top: rem(91);
+        }
+      }
+      &_steps {
+        border-radius: rem(30);
+        background: #f5f5f6;
+        padding: rem(50);
+        height: rem(330);
+        display: flex;
+        justify-content: space-between;
+        .step {
+          border-radius: rem(20);
+          width: rem(330);
+          min-height: rem(208);
+          cursor: pointer;
+          padding: rem(30);
+          &:hover {
+            transition: 0.3s;
+            background: #ffffff;
+
+            .step_img {
+              background: #e6faf7;
+              svg path {
+                transition: 0.3s;
+                fill: var(--primary-color);
+              }
+            }
+            .step_title {
+              transition: 0.3s;
+              color: var(--primary-color);
+            }
+          }
+          &_img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f8f8f9;
+            width: rem(50);
+            height: rem(50);
+            svg path {
+              transition: 0.1s ease;
+              fill: rgba(4, 4, 21, 1);
+            }
+          }
+          &_title {
+            margin-top: rem(20);
+            @include mixins.text;
+            font-weight: 600;
+          }
+          &_text {
+            @include mixins.text;
+            opacity: 0.6;
+            font-size: rem(16);
+            line-height: rem(22);
+            margin-top: rem(10);
+          }
+        }
+      }
+    }
+  }
+}
+
+.dialog {
+  position: relative;
+  max-width: rem(594);
+  height: rem(276);
+  padding: rem(30) rem(123);
+  text-align: center;
+  .close {
+    position: absolute;
+    right: rem(30);
+    top: rem(30);
+    cursor: pointer;
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      @include mixins.text;
+    }
+    .input {
+      margin: rem(20) 0;
+      display: flex;
+      gap: rem(20);
+      .select {
+        min-width: rem(132);
+        background: #f6f6fa;
+        border-radius: rem(14);
+        padding: rem(10);
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+        p {
+          @include mixins.text;
+          color: #dadada;
+        }
+      }
+      input {
+        width: rem(118);
+        background: #f6f6fa;
+        border-radius: rem(14);
+        height: rem(52);
+
+        &::placeholder {
+          color: #dadada;
+        }
+      }
+    }
+    .button {
+      width: rem(260);
+      height: rem(52);
+    }
+  }
+}
+
+// responsive
+
+@media (max-width: 768px) {
+  .root {
+    padding: rem(50) 0 rem(50);
+    .container {
+      .title {
+        h2 {
+          width: rem(335);
+          @include mixins.titleMobile;
+        }
+      }
+      .banner {
+        margin-top: rem(40);
+        &_imgs {
+          height: rem(210);
+          .first_img {
+            margin-top: rem(5);
+            width: rem(140);
+          }
+          .second_img {
+            width: rem(140);
+            transform: translateX(rem(-3));
+            margin-top: rem(60);
+          }
+        }
+        &_steps {
+          padding: rem(20);
+          height: auto;
+          flex-direction: column;
+          align-items: center;
+          justify-content: inherit;
+          .step {
+            max-width: rem(295);
+            min-height: rem(109);
+            padding: rem(15) rem(20);
+            display: flex;
+            column-gap: rem(12);
+            &:hover {
+              transition: 0.3s;
+              background: #ffffff;
+
+              .step_img {
+                background: #e6faf7;
+                svg path {
+                  transition: 0.3s;
+                  fill: var(--primary-color);
+                }
+              }
+              .step_title {
+                transition: 0.3s;
+                color: var(--primary-color);
+              }
+            }
+            &_img {
+              min-width: rem(30);
+              height: rem(30);
+              svg {
+                width: rem(16);
+                height: rem(16);
+              }
+            }
+            &_title {
+              margin-top: rem(5);
+              @include mixins.text;
+              line-height: rem(22);
+            }
+            &_text {
+              width: rem(223);
+              font-weight: 400;
+              font-size: rem(14);
+              line-height: rem(20);
+              margin-top: rem(8);
+            }
+          }
+        }
+      }
+    }
+  }
+}

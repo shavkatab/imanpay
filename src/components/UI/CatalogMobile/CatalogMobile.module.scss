@@ -1,0 +1,153 @@
+@use "styles/mixins.scss";
+@import "styles/unit.scss";
+
+.root {
+  padding: rem(60) 0;
+  .container {
+    padding: rem(0) rem(10);
+    h3 {
+      @include mixins.titleMobile;
+    }
+    .subtitles {
+      margin-top: rem(50);
+      display: flex;
+      justify-content: space-between;
+      .title {
+        display: flex;
+        align-items: center;
+        column-gap: rem(6);
+        cursor: pointer;
+        p {
+          color: var(--primary-color);
+        }
+      }
+    }
+    .body {
+      margin-top: rem(20);
+      .col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: rem(15) rem(5);
+        gap: rem(20);
+        .card {
+          width: 100%;
+          // height: rem(195);
+          &_body {
+            cursor: pointer;
+            border-radius: rem(26);
+            background: #f1f1f5;
+            height: rem(119);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: rem(15);
+            img {
+              width: rem(90);
+              height: rem(90);
+              object-fit: contain;
+            }
+            p {
+              text-align: center;
+              @include mixins.text;
+              color: var(--primary-color);
+              text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
+            }
+          }
+          &_content {
+            margin-top: rem(15);
+            p {
+              @include mixins.text;
+              &:last-child {
+                font-weight: 400;
+                color: var(--secondary-color);
+                font-size: rem(14);
+                margin-top: rem(6);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dialog {
+  position: relative;
+  .header {
+    background: #f8f8fc;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    height: rem(82);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      @include mixins.text;
+    }
+  }
+  .close {
+    position: absolute;
+    left: rem(23);
+    top: rem(30);
+    width: rem(30);
+    height: rem(30);
+    cursor: pointer;
+  }
+  .body {
+    margin-top: rem(82);
+    background: #fff;
+    padding: rem(30) rem(20) rem(60);
+  }
+  .btn {
+    margin: rem(30) 0;
+    float: right;
+  }
+  .filter {
+    width: 100%;
+    background: #f6f6fa;
+    padding: rem(30);
+    border-radius: rem(26);
+    .name {
+      font-weight: 600;
+      font-size: rem(24);
+      line-height: rem(24);
+      margin-top: rem(50);
+      &:first-child {
+        margin: 0;
+      }
+    }
+    .titles {
+      margin-top: rem(30);
+      display: grid;
+      gap: rem(30);
+      .check {
+        display: flex;
+        align-items: center;
+        column-gap: rem(10);
+        .checkBox {
+          cursor: pointer;
+          width: rem(32);
+          height: rem(32);
+          background: #d9d9d9;
+          border-radius: rem(6);
+        }
+        .activeCheck {
+          background-color: #01cab0;
+        }
+      }
+      .title {
+        @include mixins.text;
+        cursor: pointer;
+        color: var(--secondary-color);
+      }
+      .activeTitle {
+        transition: 0.03s ease-in;
+        color: var(--primary-color);
+      }
+    }
+  }
+}

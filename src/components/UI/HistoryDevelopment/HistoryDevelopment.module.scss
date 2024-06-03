@@ -1,0 +1,108 @@
+@use "styles/mixins.scss";
+@import "styles/unit.scss";
+
+.root {
+  margin-top: rem(200);
+  .container {
+    .titles {
+      h3 {
+        color: var(--primary-color);
+        font-size: rem(24);
+        font-weight: 500;
+        line-height: rem(30);
+      }
+      h2 {
+        margin-top: rem(10);
+        font-weight: 700;
+        font-size: rem(56);
+        line-height: rem(60);
+      }
+      p {
+        margin-top: rem(30);
+        font-size: rem(24);
+        font-weight: 500;
+        line-height: rem(32);
+      }
+    }
+    .row {
+      margin-top: rem(56);
+      display: grid;
+      grid-template-columns: rem(685) 1fr;
+      gap: rem(50);
+      .colFirst {
+        border-radius: rem(50);
+        // width: rem(685);
+        height: rem(400);
+        background: var(--gradient-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-weight: 600;
+          font-size: rem(128);
+          line-height: rem(80);
+          color: var(--primary-color);
+        }
+      }
+      .colSecond {
+        .content {
+          margin-bottom: rem(30);
+          display: flex;
+          column-gap: rem(15);
+          align-items: center;
+          p {
+            @include mixins.text;
+          }
+          span {
+            white-space: nowrap;
+          }
+          svg {
+            min-width: rem(40);
+            height: rem(40);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    margin-top: rem(100);
+    .container {
+      .titles {
+        h3,
+        p {
+          font-size: rem(16);
+          line-height: rem(24);
+        }
+        h2 {
+          font-size: rem(30);
+          line-height: rem(34);
+        }
+      }
+      .row {
+        margin-top: rem(35);
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: rem(50);
+        .colFirst {
+          border-radius: rem(16);
+          width: 100%;
+          height: rem(150);
+          p {
+            font-size: rem(96);
+          }
+        }
+        .colSecond {
+          .content {
+            margin-bottom: rem(15);
+            p {
+              @include mixins.textMobile;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import "styles/unit.scss";
+
+.root {
+  width: 100%;
+  .slideItem {
+    height: rem(360);
+    .img {
+      height: 100%;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+  }
+}
+.styleNext {
+  opacity: 0.15;
+  background: #fff;
+}
+.stylePrev {
+  opacity: 0.15;
+  background: #fff;
+}
+
+// responsive
+
+@media (max-width: 768px) {
+  .root {
+    .slideItem {
+      height: rem(177);
+    }
+  }
+}

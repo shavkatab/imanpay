@@ -1,0 +1,102 @@
+@use "styles/mixins.scss";
+@import "styles/unit.scss";
+
+.root {
+  .container {
+    .row {
+      h2 {
+        margin-top: rem(40);
+        font-weight: 700;
+        font-size: rem(56);
+        line-height: rem(60);
+      }
+      .description {
+        max-width: rem(851);
+        margin-top: rem(30);
+        @include mixins.content;
+      }
+      .breadCrumb {
+        display: flex;
+        align-items: center;
+        column-gap: rem(13);
+        p {
+          cursor: pointer;
+          @include mixins.text;
+          line-height: rem(30);
+          color: var(--primary-color);
+        }
+        svg {
+          width: rem(18);
+        }
+        svg path {
+          fill: var(--primary-color);
+        }
+      }
+
+      .slider {
+        margin-top: rem(50);
+        margin-left: rem(-10);
+        .styleNext {
+          left: rem(60rem);
+          top: rem(-60);
+        }
+        .stylePrev {
+          top: rem(-60);
+          left: 0;
+        }
+        .item {
+          padding: 0 rem(12);
+          .card {
+            position: relative;
+            overflow: hidden;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            h3 {
+              
+              margin-top: rem(30);
+              font-size: rem(24);
+              line-height: rem(30);
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    .container {
+      .row {
+        h2 {
+          font-weight: 700;
+          font-size: rem(30);
+          line-height: rem(34);
+        }
+        .description {
+          margin-top: rem(30);
+          @include mixins.textMobile;
+        }
+        .breadCrumb {
+          display: none;
+        }
+        .slider {
+          margin-top: rem(30);
+          .item {
+            padding: 0;
+            padding-left: rem(10);
+            .card {
+             align-items: center;
+              max-width: rem(400);
+              h3 {
+                align-self: flex-start;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

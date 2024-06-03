@@ -1,0 +1,16 @@
+.player {
+  .iframe {
+    width: 370px;
+    height: 230px;
+    border-radius: 26px;
+  }
+}
+
+@media (max-width: 576px) {
+  .player {
+    .iframe {
+      max-width: 335px;
+      max-height: 150px !important;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@use "styles/mixins.scss";
+@import "styles/unit.scss";
+
+.root {
+  margin-top: rem(100);
+  background: #f2f2f8;
+  .container {
+    .row {
+      padding: rem(100) 0;
+      position: relative;
+      max-width: rem(1000);
+      h2 {
+        font-weight: 700;
+        line-height: rem(60);
+        font-size: rem(56);
+      }
+      p {
+        @include mixins.text;
+        margin-top: rem(30);
+        opacity: 0.6;
+        strong {
+          color: #01cab0;
+        }
+      }
+    }
+  }
+  .greenRow {
+    background: var(--primary-color);
+    width: 100%;
+    padding: rem(20) 0;
+    height: rem(62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+      display: flex;
+      column-gap: rem(19);
+      cursor: pointer;
+      p {
+        font-weight: 600;
+        font-size: rem(18);
+        line-height: rem(22);
+        color: #fff;
+      }
+      svg path {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    margin-top: rem(88);
+    .container {
+      .row {
+        padding: rem(50) 0;
+
+        h2 {
+          line-height: rem(34);
+          font-size: rem(30);
+        }
+        p {
+          @include mixins.textMobile;
+        }
+      }
+    }
+  }
+}

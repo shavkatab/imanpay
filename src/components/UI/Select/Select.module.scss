@@ -1,0 +1,57 @@
+@import "styles/unit.scss";
+.selectBox {
+  position: relative;
+  width: 100%;
+  .select {
+    cursor: pointer;
+    width: 100%;
+    padding: rem(12);
+    background: rgb(241, 241, 245);
+    border-radius: rem(10);
+    font-size: rem(15);
+    line-height: rem(24);
+    height: rem(48);
+    color: #252c32;
+    border: 1px solid transparent;
+    transition: all 0.25s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    &.disabled {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color) !important;
+    }
+    &:hover {
+      border-color: var(--primary-color) !important;
+    }
+    &::placeholder {
+      font-size: rem(15);
+      line-height: rem(24);
+      color: #6e7c87;
+    }
+  }
+  .arrow {
+    position: absolute;
+    right: rem(10);
+    top: rem(14);
+  }
+  .error {
+    border-color: var(--danger-color) !important;
+
+    &:focus {
+      outline: none;
+      border-color: var(--danger-color) !important;
+    }
+  }
+  span {
+    font-size: rem(12);
+    line-height: rem(16);
+    color: #f2271c;
+    margin-top: rem(4);
+  }
+}

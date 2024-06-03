@@ -1,0 +1,35 @@
+@import "styles/unit.scss";
+
+@mixin text {
+  font-weight: 500;
+  font-size: rem(18);
+  line-height: rem(24);
+}
+
+@mixin title {
+  font-weight: 700;
+  font-size: rem(60);
+  line-height: rem(64);
+}
+
+@mixin content {
+  font-weight: 400;
+  font-size: rem(24);
+  line-height: rem(32);
+}
+@mixin contentMobile {
+  font-weight: 400;
+  font-size: rem(16);
+  line-height: rem(24);
+}
+
+@mixin textMobile {
+  font-weight: 400;
+  font-size: rem(14);
+  line-height: rem(20);
+}
+@mixin titleMobile {
+  font-weight: 700;
+  font-size: rem(32);
+  line-height: rem(40);
+}

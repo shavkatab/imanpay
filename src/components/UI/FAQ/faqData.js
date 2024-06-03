@@ -1,0 +1,80 @@
+export const accordianData = [
+  {
+    id: "panel1a-header",
+    controls: "panel1a-content",
+    title: "faq_question_1",
+    content: "faq_answer_1",
+  },
+  {
+    id: "panel2a-header",
+    controls: "panel2a-content",
+    title: "faq_question_2",
+    content: "faq_answer_2",
+  },
+  {
+    id: "panel3a-header",
+    controls: "panel3a-content",
+    title: "faq_question_3",
+    content: "faq_answer_3",
+  },
+  {
+    id: "panel4a-header",
+    controls: "panel4a-content",
+    title: "faq_question_4",
+    content: "faq_answer_4",
+  },
+  {
+    id: "panel5a-header",
+    controls: "panel5a-content",
+    title: "faq_question_5",
+    content: "faq_answer_5",
+  },
+  {
+    id: "panel6a-header",
+    controls: "panel6a-content",
+    title: "faq_question_6",
+    content: "faq_answer_6",
+  },
+  {
+    id: "panel7a-header",
+    controls: "panel7a-content",
+    title: "faq_question_7",
+    content: "faq_answer_7",
+  },
+  {
+    id: "panel8a-header",
+    controls: "panel8a-content",
+    title: "faq_question_8",
+    content: "faq_answer_8",
+  },
+  {
+    id: "panel9a-header",
+    controls: "panel9a-content",
+    title: "faq_question_9",
+    content: "faq_answer_9",
+  },
+  {
+    id: "panel10a-header",
+    controls: "panel10a-content",
+    title: "faq_question_10",
+    content: "faq_answer_10",
+  },
+  {
+    id: "panel11a-header",
+    controls: "panel11a-content",
+    title: "faq_question_11",
+    content: "faq_answer_11",
+  },
+  {
+    id: "panel12a-header",
+    controls: "panel12a-content",
+    title: "faq_question_12",
+    content: "faq_answer_12",
+  },
+  {
+    id: "panel13a-header",
+    controls: "panel13a-content",
+    title: "faq_question_13",
+    content: "faq_answer_13",
+  },
+];

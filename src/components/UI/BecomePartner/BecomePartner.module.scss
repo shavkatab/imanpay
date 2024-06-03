@@ -1,0 +1,171 @@
+@use "styles/mixins.scss";
+@import "styles/unit.scss";
+
+.root {
+  margin-top: rem(250);
+  .container {
+    .row {
+      padding-bottom: rem(150);
+      display: grid;
+      grid-template-columns: auto rem(720);
+      .colFirst {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .colSecond {
+        h2 {
+          font-weight: 700;
+          font-size: rem(50);
+          line-height: rem(56);
+        }
+        form {
+          margin-top: rem(60);
+          .button {
+            button {
+              margin-top: rem(30);
+              padding: rem(14);
+              width: rem(189);
+              height: rem(52);
+              @include mixins.text;
+              font-weight: 400;
+            }
+          }
+        }
+        .firstRow,
+        .secondRow {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: rem(40);
+        }
+
+        label {
+          @include mixins.text;
+          font-weight: 400;
+        }
+        .wrapper {
+          margin-top: rem(30);
+        }
+        .input {
+          margin-top: rem(10);
+        }
+      }
+      .bgImg {
+        display: none;
+      }
+    }
+  }
+  .greenRow {
+    background: var(--primary-color);
+    width: 100%;
+    padding: rem(20) 0;
+    height: rem(62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+      display: flex;
+      column-gap: rem(19);
+      cursor: pointer;
+      p {
+        font-weight: 600;
+        font-size: rem(18);
+        line-height: rem(22);
+        color: #fff;
+      }
+      svg path {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    margin-top: rem(100);
+
+    .container {
+      padding-right: 0;
+      .row {
+        overflow: hidden;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-bottom: rem(55);
+        .colFirst {
+          display: none;
+        }
+        .colSecond {
+          h2 {
+            font-weight: 700;
+            font-size: rem(30);
+            line-height: rem(34);
+          }
+          form {
+            margin-right: rem(20);
+            margin-top: rem(30);
+            .button {
+              display: flex;
+              justify-content: center;
+              button {
+                z-index: 1;
+                margin-top: rem(40);
+                padding: rem(10);
+                width: rem(166);
+                height: rem(44);
+                @include mixins.textMobile;
+                font-weight: 400;
+              }
+            }
+          }
+          .firstRow,
+          .secondRow {
+            display: grid;
+            grid-template-columns: 1fr;
+            column-gap: rem(0);
+          }
+
+          .fullname {
+            margin-top: rem(20);
+          }
+
+          label {
+            @include mixins.textMobile;
+            font-weight: 400;
+          }
+          .wrapper {
+            margin-top: rem(20);
+          }
+          .input {
+            z-index: 1;
+            margin-top: rem(15);
+          }
+        }
+        .bgImg {
+          display: block;
+          z-index: 0;
+          width: rem(200);
+          height: rem(200);
+          position: absolute;
+          right: rem(-50);
+          bottom: rem(-90);
+        }
+      }
+    }
+    .greenRow {
+      padding: rem(14) 0;
+      height: rem(50);
+      .content {
+        column-gap: rem(9);
+        p {
+          font-weight: 600;
+          font-size: rem(14);
+          line-height: rem(24);
+        }
+        svg {
+          width: rem(16);
+        }
+      }
+    }
+  }
+}

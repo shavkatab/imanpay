@@ -1,0 +1,111 @@
+@import "unit";
+@import "../../public/fonts/font.css";
+@import "../../public/fonts/Gilroy/stylesheet.css";
+
+:root {
+  --bg-color: #fbfbfe;
+  --primary-color: #01cab0;
+  --secondary-color: rgba(4, 4, 21, 0.6);
+  --text-color: #040415;
+  --gradient-color: linear-gradient(
+      227.59deg,
+      #c2dbff -3.24%,
+      #c0fce6 98.18%,
+      #c9fffa 98.18%
+    ),
+    #f2f2f8;
+  --global-border-radius: 16px;
+  --heading-text: "Gilroy";
+  --header-text: "Gilroy";
+  --body-text: "Gilroy";
+  --danger-color: #f76659;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Gilroy", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Gilroy Neue, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+div {
+  &:focus {
+    outline: none;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.MuiDialog-root {
+  z-index: 99999 !important;
+}
+
+.headroom-wrapper {
+  width: 100%;
+}
+
+.headroom {
+  z-index: 999 !important;
+  position: fixed !important;
+  transform: none !important;
+}
+
+.slick-dots li button::before {
+  font-size: 10px;
+}
+.slick-dots {
+  bottom: rem(-35);
+}
+.magic-dots.slick-dots li.slick-active button:before {
+  color: #040415 !important;
+}
+
+#bannerSlick {
+  .slick-dots {
+    bottom: rem(20);
+  }
+  .slick-dots li.slick-active button:before {
+    color: #fff;
+    opacity: 1;
+  }
+  .slick-dots li button::before {
+    font-size: 10px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 576px) {
+  #culture .slick-list {
+    height: rem(110);
+  }
+}
